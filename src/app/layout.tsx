@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'shadcn/ui tutorial',
   description: 'shadcn/uiのチュートリアルです。',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
