@@ -16,7 +16,7 @@ export default function ThemeSwitcher() {
     <Button
       variant={'ghost'}
       onClick={handleChangeTheme}
-      className="group/toggle h-8 w-8 px-0"
+      className="h-8 w-8 cursor-pointer px-0"
     >
       <SunIcon className="hidden dark:block" />
       <MoonIcon className="block dark:hidden" />
