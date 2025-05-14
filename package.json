@@ -6,9 +6,16 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write \"src/**/*.{js,jsx,mjs,ts,tsx,css,scss,html}\"",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,mjs,ts,tsx,css,scss,html}": "prettier --write"
   },
   "dependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
     "next": "15.3.2",
     "prettier": "^3.5.3",
     "react": "^19.0.0",
