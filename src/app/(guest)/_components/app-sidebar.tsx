@@ -89,6 +89,14 @@ const groups: MenuGroup[] = [
             url: 'https://www.radix-ui.com/',
           },
           {
+            title: 'tailwindcss',
+            url: 'https://tailwindcss.com/',
+          },
+          {
+            title: 'Lucide Icons',
+            url: 'https://lucide.dev/icons/',
+          },
+          {
             title: 'date-fns',
             url: 'https://date-fns.org/',
           },
