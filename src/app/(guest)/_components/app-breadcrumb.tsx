@@ -46,8 +46,6 @@ export default function AppBreadcrumb({ className }: { className?: string }) {
   const pathname = usePathname();
   const paths = getPaths(pathname);
 
-  console.log({ pathname, paths });
-
   return (
     <Breadcrumb className={cn(className)}>
       <BreadcrumbList>
