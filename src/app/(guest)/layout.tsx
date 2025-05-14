@@ -47,7 +47,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         </header>
         <Separator />
         {/* コンテンツ */}
-        <div className="p-4">{children}</div>
+        <main className="flex grow p-4">{children}</main>
       </SidebarInset>
     </SidebarProvider>
   );
