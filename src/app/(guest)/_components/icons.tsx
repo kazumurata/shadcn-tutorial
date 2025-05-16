@@ -10,7 +10,7 @@ export function LogoIcon(props: IconProps) {
         x2="128"
         y2="208"
         fill="none"
-        stroke="#1f598a"
+        stroke="#f35400"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="32"
