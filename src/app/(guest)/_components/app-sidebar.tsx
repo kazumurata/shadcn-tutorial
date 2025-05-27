@@ -52,12 +52,8 @@ const groups: MenuGroup[] = [
         icon: Component,
         subItems: [
           {
-            title: 'Button',
-            url: '/components/button',
-          },
-          {
-            title: 'Input',
-            url: '/components/input',
+            title: 'Chart',
+            url: '/components/chart',
           },
         ],
       },
