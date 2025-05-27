@@ -1,4 +1,5 @@
 import AreaChartGrid from '@/app/(guest)/components/chart/_components/area-chart/area-chart-grid';
+import BarChartGrid from '@/app/(guest)/components/chart/_components/bar-chart/bar-chart-grid';
 import {
   Card,
   CardContent,
@@ -32,7 +33,7 @@ function ChartCard({
 
 export default function ChartPage() {
   return (
-    <div className="flex flex-col items-center p-4 gap-4">
+    <div className="flex flex-col items-center p-4 gap-8">
       {/* Area Chart */}
       <ChartCard
         title="Area Chart"
@@ -40,6 +41,15 @@ export default function ChartPage() {
         className="w-full"
       >
         <AreaChartGrid />
+      </ChartCard>
+
+      {/* Bar Chart */}
+      <ChartCard
+        title="Bar Chart"
+        description="Showing total visitors for the last 6 months"
+        className="w-full"
+      >
+        <BarChartGrid />
       </ChartCard>
     </div>
   );
