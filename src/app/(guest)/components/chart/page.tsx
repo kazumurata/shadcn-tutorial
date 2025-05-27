@@ -3,6 +3,7 @@ import BarChartGrid from '@/app/(guest)/components/chart/_components/bar-chart/b
 import LineChartGrid from '@/app/(guest)/components/chart/_components/line-chart/line-chart-grid';
 import PieChartGrid from '@/app/(guest)/components/chart/_components/pie-chart/pie-chart-grid';
 import RadarChartGrid from '@/app/(guest)/components/chart/_components/radar-chart/radar-chart-grid';
+import RadialChartGrid from '@/app/(guest)/components/chart/_components/radial-chart/radial-chart-grid';
 import {
   Card,
   CardContent,
@@ -61,6 +62,11 @@ export default function ChartPage() {
       {/* Radar Chart */}
       <ChartCard title="Radar Chart">
         <RadarChartGrid />
+      </ChartCard>
+
+      {/* Radial Chart */}
+      <ChartCard title="Radial Chart">
+        <RadialChartGrid />
       </ChartCard>
     </div>
   );
