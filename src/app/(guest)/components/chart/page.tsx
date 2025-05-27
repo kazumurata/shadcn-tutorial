@@ -4,6 +4,7 @@ import LineChartGrid from '@/app/(guest)/components/chart/_components/line-chart
 import PieChartGrid from '@/app/(guest)/components/chart/_components/pie-chart/pie-chart-grid';
 import RadarChartGrid from '@/app/(guest)/components/chart/_components/radar-chart/radar-chart-grid';
 import RadialChartGrid from '@/app/(guest)/components/chart/_components/radial-chart/radial-chart-grid';
+import TooltipGrid from '@/app/(guest)/components/chart/_components/tooltip/tooltip-grid';
 import {
   Card,
   CardContent,
@@ -67,6 +68,11 @@ export default function ChartPage() {
       {/* Radial Chart */}
       <ChartCard title="Radial Chart">
         <RadialChartGrid />
+      </ChartCard>
+
+      {/* Tooltip */}
+      <ChartCard title="Tooltip">
+        <TooltipGrid />
       </ChartCard>
     </div>
   );
