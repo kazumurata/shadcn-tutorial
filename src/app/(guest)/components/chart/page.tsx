@@ -12,8 +12,68 @@ import {
   CardHeader,
   CardTitle,
 } from '@/shared/components/card';
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '@/shared/components/tabs';
 import { cn } from '@/shared/libs/styles';
 import { ReactNode } from 'react';
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const chartTypes = [
+  'all',
+  'area',
+  'bar',
+  'line',
+  'pie',
+  'radar',
+  'radial',
+  'tooltip',
+] as const;
+
+type ChartType = (typeof chartTypes)[number];
+
+type ChartTab = {
+  value: ChartType;
+  label: string;
+};
+
+const chartTabs = {
+  all: {
+    value: 'all',
+    label: 'All',
+  },
+  area: {
+    value: 'area',
+    label: 'Area Chart',
+  },
+  bar: {
+    value: 'bar',
+    label: 'Bar Chart',
+  },
+  line: {
+    value: 'line',
+    label: 'Line Chart',
+  },
+  pie: {
+    value: 'pie',
+    label: 'Pie Chart',
+  },
+  radar: {
+    value: 'radar',
+    label: 'Radar Chart',
+  },
+  radial: {
+    value: 'radial',
+    label: 'Radial Chart',
+  },
+  tooltip: {
+    value: 'tooltip',
+    label: 'Tooltip',
+  },
+} as const satisfies Record<ChartType, ChartTab>;
 
 function ChartCard({
   title,
@@ -37,43 +97,82 @@ function ChartCard({
   );
 }
 
-export default function ChartPage() {
+function ChartTabContent({
+  value,
+  className,
+}: {
+  value: ChartType;
+  className?: string;
+}) {
   return (
-    <div className="flex flex-col items-center p-4 gap-8">
+    <div className={cn('flex flex-col items-center gap-8', className)}>
       {/* Area Chart */}
-      <ChartCard title="Area Chart">
-        <AreaChartGrid />
-      </ChartCard>
+      {['all', 'area'].includes(value) && (
+        <ChartCard title="Area Chart">
+          <AreaChartGrid />
+        </ChartCard>
+      )}
 
       {/* Bar Chart */}
-      <ChartCard title="Bar Chart">
-        <BarChartGrid />
-      </ChartCard>
+      {['all', 'bar'].includes(value) && (
+        <ChartCard title="Bar Chart">
+          <BarChartGrid />
+        </ChartCard>
+      )}
 
       {/* Line Chart */}
-      <ChartCard title="Line Chart">
-        <LineChartGrid />
-      </ChartCard>
+      {['all', 'line'].includes(value) && (
+        <ChartCard title="Line Chart">
+          <LineChartGrid />
+        </ChartCard>
+      )}
 
       {/* Pie Chart */}
-      <ChartCard title="Pie Chart">
-        <PieChartGrid />
-      </ChartCard>
+      {['all', 'pie'].includes(value) && (
+        <ChartCard title="Pie Chart">
+          <PieChartGrid />
+        </ChartCard>
+      )}
 
       {/* Radar Chart */}
-      <ChartCard title="Radar Chart">
-        <RadarChartGrid />
-      </ChartCard>
+      {['all', 'radar'].includes(value) && (
+        <ChartCard title="Radar Chart">
+          <RadarChartGrid />
+        </ChartCard>
+      )}
 
       {/* Radial Chart */}
-      <ChartCard title="Radial Chart">
-        <RadialChartGrid />
-      </ChartCard>
+      {['all', 'radial'].includes(value) && (
+        <ChartCard title="Radial Chart">
+          <RadialChartGrid />
+        </ChartCard>
+      )}
 
       {/* Tooltip */}
-      <ChartCard title="Tooltip">
-        <TooltipGrid />
-      </ChartCard>
+      {['all', 'tooltip'].includes(value) && (
+        <ChartCard title="Tooltip">
+          <TooltipGrid />
+        </ChartCard>
+      )}
     </div>
+  );
+}
+
+export default function ChartPage() {
+  return (
+    <Tabs defaultValue="all" className="w-full p-4 gap-8">
+      <TabsList className="w-full">
+        {Object.values(chartTabs).map((tab) => (
+          <TabsTrigger key={tab.value} value={tab.value}>
+            {tab.label}
+          </TabsTrigger>
+        ))}
+      </TabsList>
+      {Object.values(chartTabs).map((tab) => (
+        <TabsContent key={tab.value} value={tab.value}>
+          <ChartTabContent value={tab.value} />
+        </TabsContent>
+      ))}
+    </Tabs>
   );
 }
