@@ -1,5 +1,6 @@
 import AreaChartGrid from '@/app/(guest)/components/chart/_components/area-chart/area-chart-grid';
 import BarChartGrid from '@/app/(guest)/components/chart/_components/bar-chart/bar-chart-grid';
+import LineChartGrid from '@/app/(guest)/components/chart/_components/line-chart/line-chart-grid';
 import {
   Card,
   CardContent,
@@ -7,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/shared/components/card';
+import { cn } from '@/shared/libs/styles';
 import { ReactNode } from 'react';
 
 function ChartCard({
@@ -21,7 +23,7 @@ function ChartCard({
   className?: string;
 }) {
   return (
-    <Card className={className}>
+    <Card className={cn('w-full', className)}>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         {description && <CardDescription>{description}</CardDescription>}
@@ -38,7 +40,6 @@ export default function ChartPage() {
       <ChartCard
         title="Area Chart"
         description="Showing total visitors for the last 6 months"
-        className="w-full"
       >
         <AreaChartGrid />
       </ChartCard>
@@ -47,9 +48,16 @@ export default function ChartPage() {
       <ChartCard
         title="Bar Chart"
         description="Showing total visitors for the last 6 months"
-        className="w-full"
       >
         <BarChartGrid />
+      </ChartCard>
+
+      {/* Line Chart */}
+      <ChartCard
+        title="Line Chart"
+        description="Showing total visitors for the last 6 months"
+      >
+        <LineChartGrid />
       </ChartCard>
     </div>
   );
