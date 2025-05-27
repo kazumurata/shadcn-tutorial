@@ -23,7 +23,6 @@ import { ReactNode } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const chartTypes = [
-  'all',
   'area',
   'bar',
   'line',
@@ -41,10 +40,6 @@ type ChartTab = {
 };
 
 const chartTabs = {
-  all: {
-    value: 'all',
-    label: 'All',
-  },
   area: {
     value: 'area',
     label: 'Area Chart',
@@ -107,49 +102,49 @@ function ChartTabContent({
   return (
     <div className={cn('flex flex-col items-center gap-8', className)}>
       {/* Area Chart */}
-      {['all', 'area'].includes(value) && (
+      {value === 'area' && (
         <ChartCard title="Area Chart">
           <AreaChartGrid />
         </ChartCard>
       )}
 
       {/* Bar Chart */}
-      {['all', 'bar'].includes(value) && (
+      {value === 'bar' && (
         <ChartCard title="Bar Chart">
           <BarChartGrid />
         </ChartCard>
       )}
 
       {/* Line Chart */}
-      {['all', 'line'].includes(value) && (
+      {value === 'line' && (
         <ChartCard title="Line Chart">
           <LineChartGrid />
         </ChartCard>
       )}
 
       {/* Pie Chart */}
-      {['all', 'pie'].includes(value) && (
+      {value === 'pie' && (
         <ChartCard title="Pie Chart">
           <PieChartGrid />
         </ChartCard>
       )}
 
       {/* Radar Chart */}
-      {['all', 'radar'].includes(value) && (
+      {value === 'radar' && (
         <ChartCard title="Radar Chart">
           <RadarChartGrid />
         </ChartCard>
       )}
 
       {/* Radial Chart */}
-      {['all', 'radial'].includes(value) && (
+      {value === 'radial' && (
         <ChartCard title="Radial Chart">
           <RadialChartGrid />
         </ChartCard>
       )}
 
       {/* Tooltip */}
-      {['all', 'tooltip'].includes(value) && (
+      {value === 'tooltip' && (
         <ChartCard title="Tooltip">
           <TooltipGrid />
         </ChartCard>
@@ -160,7 +155,7 @@ function ChartTabContent({
 
 export default function ChartPage() {
   return (
-    <Tabs defaultValue="all" className="w-full p-4 gap-8">
+    <Tabs defaultValue="area" className="w-full p-4 gap-8">
       <TabsList className="w-full">
         {Object.values(chartTabs).map((tab) => (
           <TabsTrigger key={tab.value} value={tab.value}>
