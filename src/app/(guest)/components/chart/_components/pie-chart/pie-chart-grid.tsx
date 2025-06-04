@@ -6,7 +6,7 @@ import LabelListPieChart from '@/app/(guest)/components/chart/_components/pie-ch
 import LegendPieChart from '@/app/(guest)/components/chart/_components/pie-chart/charts/legend-pie-chart';
 import DonutPieChart from '@/app/(guest)/components/chart/_components/pie-chart/charts/donut-pie-chart';
 import DonutActivePieChart from '@/app/(guest)/components/chart/_components/pie-chart/charts/donut-active-pie-chart';
-import DonutTextPieChart from '@/app/(guest)/components/chart/_components/pie-chart/charts/docut-text-pie-chart';
+import DonutTextPieChart from '@/app/(guest)/components/chart/_components/pie-chart/charts/donut-text-pie-chart';
 import StackedPieChart from '@/app/(guest)/components/chart/_components/pie-chart/charts/stacked-pie-chart';
 import InteractivePieChart from '@/app/(guest)/components/chart/_components/pie-chart/charts/interactive-pie-chart';
 import { cn } from '@/shared/libs/styles';
